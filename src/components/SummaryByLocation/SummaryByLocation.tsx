@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts'
-import {useSummaryByLocationData} from "../api/services/data.service";
-import { LineItem, metrics, metricLabels, MetricKey, NumericKeys } from "./summaryTypes";
-
+import {useSummaryByLocationData} from "../../api/services/data.service";
+import { LineItem, metrics } from "./summaryTypes";
+import Chart from "./components/Chart";
 
 
 const SummaryByLocationTable: React.FC = () => {
@@ -32,37 +31,7 @@ const SummaryByLocationTable: React.FC = () => {
       <h2 className="text-3xl font-bold text-gray-800">Financial Summary by Location</h2>
 
       {/* Chart */}
-      <div className="w-full h-[500px] bg-white rounded-xl shadow-md p-4">
-        <h3 className="text-xl font-semibold text-gray-700 mb-2">
-          {metricLabels[selectedMetric]}
-        </h3>
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={chartData}>
-            <XAxis
-              dataKey="name"
-              interval={0}
-              tick={{ fontSize: 12 }}
-              height={100}
-              angle={-30}
-              textAnchor="end"
-            />
-            <YAxis />
-            <Tooltip />
-            <Bar dataKey="value">
-              {chartData.map((entry, index) => {
-                const intensity = Math.round((entry.value / maxValue) * 50) + 20
-                return (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={`hsl(217, 90%, ${100 - intensity}%)`}
-                  />
-                )
-              })}
-            </Bar>
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
-
+      <Chart selectedMetric={selectedMetric} chartData={chartData} maxValue={maxValue}/>
       {/* Table */}
       <div className="overflow-x-auto shadow rounded-xl">
         <table className="min-w-full text-sm text-gray-700 bg-white border-separate border-spacing-0">

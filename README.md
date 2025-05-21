@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+## 🚀 Ownstable Financial Dashboard
+Interactive React + TypeScript dashboard displaying financial metrics per location with charts and tables.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 🔧 Getting Started
+##### 1.  🧱 Install dependencies**
+```bash
+npm install
+```
+##### 2. ⚙️ Configure environment variables
+Create a .env file in the root of the project and add:
+```bash
+REACT_APP_API_BASE_URL=https://devownstablefunctions.azurewebsites.net
+REACT_APP_API_USER_EMAIL=brian.davis@ownstable.com
+REACT_APP_API_USER_PASSWORD=test
+```
 
-## Available Scripts
+4. 🧪 Run the app
+```bash
+npm start
+```
+This will start the local development server on http://localhost:3000.
 
-In the project directory, you can run:
+✨ Features
+* 📊 Toggleable financial metric bar chart
 
-### `npm start`
+* 📍 Location-based invoice breakdown
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* 🧠 Smart loading/error states
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* 🎨 Tailwind CSS styling
 
-### `npm test`
+* 🔄 API integration with login/session headers
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##### 📁 Project Structure
+```
+pgsql
+Copy
+Edit
+src/
+├── components/
+├── hooks/
+│   └── useSummaryByLocationData.ts
+├── lib/
+│   └── api.ts
+├── types/
+│   └── api.summaryTypes.ts
+├── utils/
+│   └── api.utils.ts
+├── App.tsx
+└── index.tsx
+```
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

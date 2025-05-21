@@ -42,7 +42,6 @@ export const useSummaryByLocationData = () => {
         const auth = await api.post<AuthResponse, typeof credentials>(AUTH_URL, credentials)
 
         // Step 2: Get report data
-        console.log('SessionId', auth.data.SessionId);
         const url = `${REPORT_URL}?invoiceType=O&DateCreated=2025-05-01&DateDue=2025-05-30&isPaid=0`
         const report = await api.get<{ SummaryByLocation: SummaryLocationResponse[] }>(url, {
           headers: {
@@ -50,8 +49,6 @@ export const useSummaryByLocationData = () => {
             OrgId: auth.data.OrgId || '1',
           },
         })
-
-        console.log('report', report);
         setData(report.data.SummaryByLocation)
       } catch (err) {
         setError(err as Error)

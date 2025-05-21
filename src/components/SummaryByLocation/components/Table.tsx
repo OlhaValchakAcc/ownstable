@@ -1,5 +1,5 @@
 import React from "react";
-import {LineItem, MetricKey, metrics} from "../summaryTypes";
+import {LineItem, metrics} from "../summaryTypes";
 
 interface TableProps {
   setSelectedMetric: (metric: string) => void;
