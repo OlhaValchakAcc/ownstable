@@ -21,7 +21,7 @@ npm start
 This will start the local development server on http://localhost:3000.
 
 ✨ Features
-* 📊 Toggleable financial metric bar chart
+* 📊 **Toggleable financial metric bar chart**
 
 * 📍 Location-based invoice breakdown
 
@@ -30,23 +30,3 @@ This will start the local development server on http://localhost:3000.
 * 🎨 Tailwind CSS styling
 
 * 🔄 API integration with login/session headers
-
-##### 📁 Project Structure
-```
-pgsql
-Copy
-Edit
-src/
-├── components/
-├── hooks/
-│   └── useSummaryByLocationData.ts
-├── lib/
-│   └── api.ts
-├── types/
-│   └── api.summaryTypes.ts
-├── utils/
-│   └── api.utils.ts
-├── App.tsx
-└── index.tsx
-```
-
