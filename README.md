@@ -9,7 +9,8 @@ npm install
 ##### 2. ⚙️ Configure environment variables
 Create a .env file in the root of the project and add:
 ```bash
-REACT_APP_API_BASE_URL=https://devownstablefunctions.azurewebsites.net
+REACT_APP_AUTH_URL=/api/v1/IdentityServices/UserSession
+REACT_APP_REPORT_URL=/api/v1/Invoices/SummaryByLocation
 REACT_APP_API_USER_EMAIL=brian.davis@ownstable.com
 REACT_APP_API_USER_PASSWORD=test
 ```
